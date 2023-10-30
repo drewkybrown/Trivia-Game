@@ -1,0 +1,92 @@
+/* background color and font styles */
+body {
+    background-color: #f7f7f7;
+    font-family: sans-serif;
+}
+
+/* style of the header ..color, text, padding etc.. */
+header {
+    background-color: #87b9da;
+    color: #fff;
+    padding: 10px;
+}
+
+/* center the question container and footer */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* footer */
+footer {
+    text-align: center;
+}
+
+
+/* Target game title    */
+#game-title {
+    font-size: 35px;
+    color: blue;
+    text-align: center;
+    font-family: "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+}
+
+/*Target question container */
+#question-container {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+/* Target question continer */
+.question-container {
+    display: none;
+}
+
+/* Target question text */
+#question-text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style the answer list */
+#answer-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the answers */
+#answer-list li button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* style the answer buttons on hover*/
+#answer-list li button:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* style the score elemnt in the footer*/
+#score {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+
+
