@@ -97,3 +97,95 @@ const questions = [
     correctAnswer: "A",
   },
 ];
+
+let currentQuestionIndex = 0;
+const answerButtons = document.querySelectorAll(
+  ".question-container ul li button"
+);
+const feedback = document.getElementById("feedback");
+const scoreDisplay = document.getElementById("score");
+
+const nextButton = document.getElementById("next-button");
+
+let score = 0;
+
+// Function to display a question
+function displayQuestion(index) {
+  const questionContainers = document.querySelectorAll(".question-container");
+  questionContainers.forEach((container, i) => {
+    if (i === index) {
+      container.style.display = "block";
+    } else {
+      container.style.display = "none";
+    }
+  });
+}
+
+// Function to update the score display
+function updateScoreDisplay() {
+  scoreDisplay.textContent = score;
+}
+
+// Function to handle the answer submission and move to the next question
+function handleAnswerSubmission(selectedAnswer) {
+  const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+  if (selectedAnswer === correctAnswer) {
+    feedback.textContent = "Correct!";
+    score++;
+  } else {
+    feedback.textContent = "Incorrect!";
+  }
+
+  feedback.style.display = "block";
+  answerButtons.forEach((button) => {
+    button.disabled = true;
+  });
+
+  updateScoreDisplay();
+
+  // Automatically move to the next question after a delay
+  setTimeout(() => {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+      displayQuestion(currentQuestionIndex);
+      feedback.style.display = "none";
+      answerButtons.forEach((button) => {
+        button.disabled = false;
+      });
+    } else {
+      // All questions are answered
+      feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
+      feedback.style.display = "block";
+    }
+  }, 1000); // Adjust the delay as needed
+}
+
+// Event listener for answer buttons
+answerButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const selectedAnswer = this.className;
+    handleAnswerSubmission(selectedAnswer);
+  });
+});
+
+// Event listener for the "Next Question" button
+nextButton.addEventListener("click", function () {
+  feedback.style.display = "none";
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < questions.length) {
+    displayQuestion(currentQuestionIndex);
+    answerButtons.forEach((button) => {
+      button.disabled = false;
+    });
+  } else {
+    // All questions are answered
+    feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
+    feedback.style.display = "block";
+  }
+});
+
+// Display the first question and enable the answer buttons
+displayQuestion(currentQuestionIndex);
