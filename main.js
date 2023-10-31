@@ -111,6 +111,7 @@ const startButton = document.getElementById("start-button");
 let score = 0;
 let timeLeft = 30;
 let timerInterval; // variable to store the timer interval
+let gameStarted = false;
 
 // Function to start the timer
 function startTimer() {
@@ -143,19 +144,20 @@ function displayQuestion(index) {
     }
   });
 
-  // Reset the timer
-  resetTimer();
+  if (gameStarted) {
+    resetTimer();
+    startTimer();
+  }
 }
 
 // Function to update the score display
 function updateScoreDisplay() {
-  scoreDisplay.textContent = score;
+  scoreDisplay.textContent = `Score: ${score}`;
 }
 
 // Function to handle the answer submission and move to the next question
 function handleAnswerSubmission(selectedAnswer) {
   const correctAnswer = questions[currentQuestionIndex].correctAnswer;
-  resetTimer();
 
   if (selectedAnswer === correctAnswer) {
     feedback.textContent = "Correct!";
@@ -181,13 +183,16 @@ function handleAnswerSubmission(selectedAnswer) {
     } else {
       feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
       feedback.style.display = "block";
+      nextButton.style.display = "none";
     }
-  }, 1000); // Adjust the delay as needed
+  }, 2000); // Adjust the delay as needed
 }
 
 // Event listener for the start button
 startButton.addEventListener("click", function () {
   startButton.style.display = "none"; // Hide the start button
+  nextButton.style.display = "block";
+  gameStarted = true;
   displayQuestion(currentQuestionIndex); // Start the game by displaying the first question
   startTimer(); // Start the timer
 });
@@ -210,11 +215,9 @@ nextButton.addEventListener("click", function () {
     answerButtons.forEach((button) => {
       button.disabled = false;
     });
-  } else {
-    feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
-    feedback.style.display = "block";
   }
 });
 
 // Display the first question and enable the answer buttons
+updateScoreDisplay();
 displayQuestion(currentQuestionIndex);
