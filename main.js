@@ -152,7 +152,7 @@ function displayQuestion(index) {
 
 // Function to update the score display
 function updateScoreDisplay() {
-  scoreDisplay.textContent = `Score: ${score}`;
+  scoreDisplay.textContent = score;
 }
 
 // Function to handle the answer submission and move to the next question
@@ -170,6 +170,8 @@ function handleAnswerSubmission(selectedAnswer) {
   answerButtons.forEach((button) => {
     button.disabled = true;
   });
+
+  updateScoreDisplay(); // Update the score display
 
   setTimeout(() => {
     currentQuestionIndex++;
@@ -191,7 +193,7 @@ function handleAnswerSubmission(selectedAnswer) {
 // Event listener for the start button
 startButton.addEventListener("click", function () {
   startButton.style.display = "none"; // Hide the start button
-  nextButton.style.display = "block";
+  nextButton.style.display = "none";
   gameStarted = true;
   displayQuestion(currentQuestionIndex); // Start the game by displaying the first question
   startTimer(); // Start the timer
