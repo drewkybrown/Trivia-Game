@@ -98,40 +98,32 @@ const questions = [
   },
 ];
 
+// global variables
 let currentQuestionIndex = 0;
 const answerButtons = document.querySelectorAll(
   ".question-container ul li button"
 );
 const feedback = document.getElementById("feedback");
 const scoreDisplay = document.getElementById("score");
-const nextButton = document.getElementById("next-button");
-const timerDisplay = document.getElementById("time-left");
 const startButton = document.getElementById("start-button");
+const resetButton = document.getElementById("reset-button");
 
 let score = 0;
-let timeLeft = 30;
-let timerInterval; // variable to store the timer interval
 let gameStarted = false;
 
-// Function to start the timer
-function startTimer() {
-  timerInterval = setInterval(function () {
-    timeLeft--;
-    timerDisplay.textContent = timeLeft;
-
-    if (timeLeft <= 0) {
-      // Time is up, move to the next question
-      handleAnswerSubmission(null);
-    }
-  }, 1000);
+// Function to reset the game
+function resetGame() {
+  score = 0;
+  currentQuestionIndex = 0;
+  gameStarted = false;
+  updateScoreDisplay();
+  startButton.style.display = "block";
+  feedback.style.display = "block";
+  resetButton.style.display = "none"; // Hide the reset button
+  displayQuestion(currentQuestionIndex); // Display the first question
 }
 
-// Function to reset the timer
-function resetTimer() {
-  clearInterval(timerInterval);
-  timeLeft = 30;
-  timerDisplay.textContent = timeLeft;
-}
+resetButton.addEventListener("click", resetGame);
 
 // Function to display a question
 function displayQuestion(index) {
@@ -145,14 +137,20 @@ function displayQuestion(index) {
   });
 
   if (gameStarted) {
-    resetTimer();
-    startTimer();
+    updateAnswerButtons(); // Enable answer buttons
   }
 }
 
 // Function to update the score display
 function updateScoreDisplay() {
   scoreDisplay.textContent = score;
+}
+
+// Function to enable or disable answer buttons
+function updateAnswerButtons() {
+  answerButtons.forEach((button) => {
+    button.disabled = !gameStarted;
+  });
 }
 
 // Function to handle the answer submission and move to the next question
@@ -167,10 +165,7 @@ function handleAnswerSubmission(selectedAnswer) {
   }
 
   feedback.style.display = "block";
-  answerButtons.forEach((button) => {
-    button.disabled = true;
-  });
-
+  updateAnswerButtons(); // Disable answer buttons
   updateScoreDisplay(); // Update the score display
 
   setTimeout(() => {
@@ -179,13 +174,10 @@ function handleAnswerSubmission(selectedAnswer) {
     if (currentQuestionIndex < questions.length) {
       displayQuestion(currentQuestionIndex);
       feedback.style.display = "none";
-      answerButtons.forEach((button) => {
-        button.disabled = false;
-      });
     } else {
       feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
       feedback.style.display = "block";
-      nextButton.style.display = "none";
+      resetButton.style.display = "block"; // Show the reset button
     }
   }, 2000); // Adjust the delay as needed
 }
@@ -193,10 +185,9 @@ function handleAnswerSubmission(selectedAnswer) {
 // Event listener for the start button
 startButton.addEventListener("click", function () {
   startButton.style.display = "none"; // Hide the start button
-  nextButton.style.display = "none";
   gameStarted = true;
   displayQuestion(currentQuestionIndex); // Start the game by displaying the first question
-  startTimer(); // Start the timer
+  updateAnswerButtons(); // Initialize the answer buttons
 });
 
 // Event listener for answer buttons
@@ -206,20 +197,3 @@ answerButtons.forEach((button) => {
     handleAnswerSubmission(selectedAnswer);
   });
 });
-
-// Event listener for the "Next Question" button
-nextButton.addEventListener("click", function () {
-  feedback.style.display = "none";
-  currentQuestionIndex++;
-
-  if (currentQuestionIndex < questions.length) {
-    displayQuestion(currentQuestionIndex);
-    answerButtons.forEach((button) => {
-      button.disabled = false;
-    });
-  }
-});
-
-// Display the first question and enable the answer buttons
-updateScoreDisplay();
-displayQuestion(currentQuestionIndex);

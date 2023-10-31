@@ -90,23 +90,16 @@ footer {
     text-align: center;
 }
 
-
-#timer {
-    font-size: 20px;
-    margin: 10px 0;
-    color: red;
-}
-
 #button-container {
     display: block;
     text-align: center;
 }
 
-#time-left {
-    font-size: 15px;
-    color: red;
-    font-weight: bold;
+#start-button {
+    display: block;
 }
+
+
 
 
 
