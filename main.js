@@ -104,10 +104,34 @@ const answerButtons = document.querySelectorAll(
 );
 const feedback = document.getElementById("feedback");
 const scoreDisplay = document.getElementById("score");
-
 const nextButton = document.getElementById("next-button");
+const timerDisplay = document.getElementById("time-left");
+const startButton = document.getElementById("start-button");
 
 let score = 0;
+let timeLeft = 30;
+
+let timerInterval; // variable to store the timer interval
+
+// function to start the timer
+function startTimer() {
+  timerInterval = setInterval(function () {
+    timeLeft--;
+    timerDisplay.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      //time is up, move to next question
+      handleAnswerSubmission(null);
+    }
+  }, 1000);
+}
+
+// function to reset the timer
+function resetTimer() {
+  clearInterval(timerInterval);
+  timeLeft = 30;
+  timerDisplay.textContent = timeLeft;
+}
 
 // Function to display a question
 function displayQuestion(index) {
@@ -129,6 +153,7 @@ function updateScoreDisplay() {
 // Function to handle the answer submission and move to the next question
 function handleAnswerSubmission(selectedAnswer) {
   const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+  resetTimer();
 
   if (selectedAnswer === correctAnswer) {
     feedback.textContent = "Correct!";
@@ -161,6 +186,13 @@ function handleAnswerSubmission(selectedAnswer) {
     }
   }, 1000); // Adjust the delay as needed
 }
+
+// Event listener for the start button
+startButton.addEventListener("click", function () {
+  startButton.style.display = "none"; // hide the start button
+  displayQuestion(currentQuestionIndex);
+  startTimer(); //start the game by displaying the first question
+});
 
 // Event listener for answer buttons
 answerButtons.forEach((button) => {
