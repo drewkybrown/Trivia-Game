@@ -110,23 +110,22 @@ const startButton = document.getElementById("start-button");
 
 let score = 0;
 let timeLeft = 30;
-
 let timerInterval; // variable to store the timer interval
 
-// function to start the timer
+// Function to start the timer
 function startTimer() {
   timerInterval = setInterval(function () {
     timeLeft--;
     timerDisplay.textContent = timeLeft;
 
     if (timeLeft <= 0) {
-      //time is up, move to next question
+      // Time is up, move to the next question
       handleAnswerSubmission(null);
     }
   }, 1000);
 }
 
-// function to reset the timer
+// Function to reset the timer
 function resetTimer() {
   clearInterval(timerInterval);
   timeLeft = 30;
@@ -143,6 +142,9 @@ function displayQuestion(index) {
       container.style.display = "none";
     }
   });
+
+  // Reset the timer
+  resetTimer();
 }
 
 // Function to update the score display
@@ -167,9 +169,6 @@ function handleAnswerSubmission(selectedAnswer) {
     button.disabled = true;
   });
 
-  updateScoreDisplay();
-
-  // Automatically move to the next question after a delay
   setTimeout(() => {
     currentQuestionIndex++;
 
@@ -180,7 +179,6 @@ function handleAnswerSubmission(selectedAnswer) {
         button.disabled = false;
       });
     } else {
-      // All questions are answered
       feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
       feedback.style.display = "block";
     }
@@ -189,9 +187,9 @@ function handleAnswerSubmission(selectedAnswer) {
 
 // Event listener for the start button
 startButton.addEventListener("click", function () {
-  startButton.style.display = "none"; // hide the start button
-  displayQuestion(currentQuestionIndex);
-  startTimer(); //start the game by displaying the first question
+  startButton.style.display = "none"; // Hide the start button
+  displayQuestion(currentQuestionIndex); // Start the game by displaying the first question
+  startTimer(); // Start the timer
 });
 
 // Event listener for answer buttons
@@ -213,7 +211,6 @@ nextButton.addEventListener("click", function () {
       button.disabled = false;
     });
   } else {
-    // All questions are answered
     feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
     feedback.style.display = "block";
   }
