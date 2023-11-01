@@ -1,13 +1,13 @@
 /* background color and font styles */
 body {
-    background-color: #1b2c69;
+    background-color: #141497;
     font-family: sans-serif;
 }
 
 /* style of the header ..color, text, padding etc.. */
 header {
-    background-color: #1089da;
-    color: #fff;
+    background-color: none;
+    color: #000405;
     padding: 10px;
     
 }
@@ -27,11 +27,18 @@ footer {
 
 /* Target game title    */
 #game-title {
-    font-size: 35px;
-    color: rgb(246, 246, 247);
+    font-size: 40px;
+    color: rgb(246, 245, 241);
     text-align: center;
     font-family: "Helvetica Neue",
     Helvetica, Arial, sans-serif;
+}
+
+/* Taget game background */
+.game-background {
+    background-image: url('background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /*Target question container */
@@ -74,7 +81,7 @@ footer {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #81d8e8;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -108,12 +115,12 @@ footer p {
 #start-button {
     display: block;
     color: black(251, 251, 252);
-    background-color: purple transparent;
     padding: 10px;
     margin: 10px;
     border: 1px solid black transparent;
     border-radius: 10px;
-    box-shadow: black 1px 1px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 #feedback {
@@ -124,18 +131,22 @@ footer p {
 #music-controls {
     text-align:center;
     margin-top: 20px;
+    
 }
 
 #play-music,
 #pause-music,
 #stop-music {
   margin-right: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 /* CSS style for for volume and labels */
 .volume-container {
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: center;
+    
 }
 
 .volume-container label {
@@ -143,6 +154,10 @@ footer p {
     color: white;
 }
 
+#score-container {
+    text-align: center;
+    margin-top: 20px;
+}
 
 
 
