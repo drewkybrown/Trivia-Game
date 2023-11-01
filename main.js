@@ -98,7 +98,7 @@ const questions = [
   },
 ];
 
-// global variables
+// Global variables
 let currentQuestionIndex = 0;
 const answerButtons = document.querySelectorAll(
   ".question-container ul li button"
@@ -107,6 +107,10 @@ const feedback = document.getElementById("feedback");
 const scoreDisplay = document.getElementById("score");
 const startButton = document.getElementById("start-button");
 const resetButton = document.getElementById("reset-button");
+const music = document.getElementById("background-music");
+const playMusicButton = document.getElementById("play-music");
+const pauseMusicButton = document.getElementById("pause-music");
+const volumeControl = document.getElementById("volume-control");
 
 let score = 0;
 let gameStarted = false;
@@ -196,4 +200,19 @@ answerButtons.forEach((button) => {
     const selectedAnswer = this.className;
     handleAnswerSubmission(selectedAnswer);
   });
+});
+
+// Event listener to play music
+playMusicButton.addEventListener("click", function () {
+  music.play();
+});
+
+// Event listener to pause music
+pauseMusicButton.addEventListener("click", function () {
+  music.pause();
+});
+
+// Event listener to adjust the volume
+volumeControl.addEventListener("input", function () {
+  music.volume = parseFloat(this.value);
 });
