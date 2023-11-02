@@ -126,10 +126,10 @@ function resetGame() {
   scoreDisplay.textContent = "0";
   startButton.style.display = "block";
   feedback.style.display = "none";
-  resetButton.style.display = "none"; // Hide the reset button
-  introductionSection.style.display = "block"; // Show the introduction
+  resetButton.style.display = "none";
+  introductionSection.style.display = "block";
   questionContainers.forEach((container) => {
-    container.style.display = "none"; // Hide all question containers
+    container.style.display = "none";
   });
 }
 
@@ -146,7 +146,7 @@ function displayQuestion(index) {
   });
 
   if (gameStarted) {
-    updateAnswerButtons(); // Enable answer buttons
+    updateAnswerButtons();
   }
 }
 
@@ -174,9 +174,8 @@ function handleAnswerSubmission(selectedAnswer) {
   }
 
   feedback.style.display = "block";
-  updateAnswerButtons(); // Disable answer buttons
-  updateScoreDisplay(); // Update the score display
-
+  updateAnswerButtons();
+  updateScoreDisplay();
   setTimeout(() => {
     currentQuestionIndex++;
 
@@ -186,9 +185,9 @@ function handleAnswerSubmission(selectedAnswer) {
     } else {
       feedback.textContent = `Game over! Your final score is ${score} out of ${questions.length}`;
       feedback.style.display = "block";
-      resetButton.style.display = "block"; // Show the reset button
+      resetButton.style.display = "block";
     }
-  }, 2000); // Adjust the delay as needed
+  }, 2000);
 }
 
 // Function to hide the introduction
@@ -203,11 +202,11 @@ function showIntroduction() {
 
 // Event listener for the "Start Game" button
 startButton.addEventListener("click", function () {
-  startButton.style.display = "none"; // Hide the start button
-  hideIntroduction(); // Hide the introduction when the game starts
+  startButton.style.display = "none";
+  hideIntroduction();
   gameStarted = true;
-  displayQuestion(currentQuestionIndex); // Start the game by displaying the first question
-  updateAnswerButtons(); // Enable answer buttons
+  displayQuestion(currentQuestionIndex);
+  updateAnswerButtons();
 });
 
 // Event listener for answer buttons

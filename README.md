@@ -18,7 +18,7 @@ The game is built using the following technologies:
 
 ## Getting Started
 
-You can play the game online by clicking [here](Insert link after completion).
+You can play the game online by clicking [here](https://drewkybrown.github.io/Trivia-Game/).
 
 If you want to run it locally for development or testing, follow these steps:
 
