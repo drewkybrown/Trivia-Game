@@ -94,7 +94,7 @@ const questions = [
       B: "Operation Barbarossa",
       C: "Operation Overlord",
     },
-    correctAnswer: "A",
+    correctAnswer: "C",
   },
 ];
 
@@ -111,6 +111,8 @@ const music = document.getElementById("background-music");
 const playMusicButton = document.getElementById("play-music");
 const pauseMusicButton = document.getElementById("pause-music");
 const volumeControl = document.getElementById("volume-control");
+const introductionSection = document.getElementById("introduction");
+const questionContainers = document.querySelectorAll(".question-container");
 
 let score = 0;
 let gameStarted = false;
@@ -121,17 +123,20 @@ function resetGame() {
   currentQuestionIndex = 0;
   gameStarted = false;
   updateScoreDisplay();
+  scoreDisplay.textContent = "0";
   startButton.style.display = "block";
   feedback.style.display = "block";
   resetButton.style.display = "none"; // Hide the reset button
-  displayQuestion(currentQuestionIndex); // Display the first question
+  introductionSection.style.display = "block"; // Show the introduction
+  questionContainers.forEach((container) => {
+    container.style.display = "none"; // Hide all question containers
+  });
 }
 
 resetButton.addEventListener("click", resetGame);
 
 // Function to display a question
 function displayQuestion(index) {
-  const questionContainers = document.querySelectorAll(".question-container");
   questionContainers.forEach((container, i) => {
     if (i === index) {
       container.style.display = "block";
@@ -186,12 +191,23 @@ function handleAnswerSubmission(selectedAnswer) {
   }, 2000); // Adjust the delay as needed
 }
 
-// Event listener for the start button
+// Function to hide the introduction
+function hideIntroduction() {
+  introductionSection.style.display = "none";
+}
+
+// Function to show the introduction
+function showIntroduction() {
+  introductionSection.style.display = "block";
+}
+
+// Event listener for the "Start Game" button
 startButton.addEventListener("click", function () {
   startButton.style.display = "none"; // Hide the start button
+  hideIntroduction(); // Hide the introduction when the game starts
   gameStarted = true;
   displayQuestion(currentQuestionIndex); // Start the game by displaying the first question
-  updateAnswerButtons(); // Initialize the answer buttons
+  updateAnswerButtons(); // Enable answer buttons
 });
 
 // Event listener for answer buttons

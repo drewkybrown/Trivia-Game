@@ -1,18 +1,31 @@
-/* background color and font styles */
-body {
-    background-color: #141497;
+/* background styles on html and body elements */
+html, body {
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-/* style of the header ..color, text, padding etc.. */
+/*  styles to adjust the layout */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure body covers the entire viewport height */
+}
+
+
+/* style of the header color, text, padding etc.. */
 header {
-    background-color: none;
     color: #000405;
-    padding: 10px;
+    padding: 20px 0;
     
 }
 
-/* center the question container and footer */
+/* centers the question container and footer */
 main {
     display: flex;
     flex-direction: column;
@@ -24,12 +37,31 @@ footer {
     text-align: center;
 }
 
+/* sstyle for introduction */
+#introduction {
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+
+}
+
+/* style for introduction paragraph */
+#introduction p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgb(244, 240, 236);
+    font-style: italic;
+    font-weight: bold;
+}
+
 
 /* Target game title    */
 #game-title {
     font-size: 40px;
     color: rgb(246, 245, 241);
     text-align: center;
+    padding: 10px auto;
     font-family: "Helvetica Neue",
     Helvetica, Arial, sans-serif;
 }
@@ -39,6 +71,7 @@ footer {
     background-image: url('background.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 /*Target question container */
@@ -96,7 +129,7 @@ footer {
 /* style the score elemnt in the footer*/
 footer #score {
     display: block;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: white;
     text-align: center;
@@ -114,17 +147,21 @@ footer p {
 
 #start-button {
     display: block;
-    color: black(251, 251, 252);
+    color: black;
     padding: 10px;
-    margin: 10px;
+    margin: 20px 0;
     border: 1px solid black transparent;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
 
+/* feedback styles */
+
 #feedback {
     color: white;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 /* CSS for music controls */
@@ -134,6 +171,7 @@ footer p {
     
 }
 
+/* music controls */
 #play-music,
 #pause-music,
 #stop-music {
@@ -144,7 +182,7 @@ footer p {
 
 /* CSS style for for volume and labels */
 .volume-container {
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
     
 }
