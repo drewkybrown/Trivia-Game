@@ -125,7 +125,7 @@ function resetGame() {
   updateScoreDisplay();
   scoreDisplay.textContent = "0";
   startButton.style.display = "block";
-  feedback.style.display = "block";
+  feedback.style.display = "none";
   resetButton.style.display = "none"; // Hide the reset button
   introductionSection.style.display = "block"; // Show the introduction
   questionContainers.forEach((container) => {

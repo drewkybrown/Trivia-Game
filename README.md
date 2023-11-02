@@ -1,31 +1,31 @@
 # Trivia-Game
 
-History Quiz Challenge - "Test your knowledge with this interactive trivia game."
+## Project Description
+
+Welcome to the History Quiz Challenge! This interactive trivia game is designed to test your knowledge of historical facts, famous figures, and significant events throughout history. Whether you're a history buff or just looking for a fun way to learn, this game offers a great opportunity to explore the past.
 
 ## ![Wireframe Screenshot](https://github.com/drewkybrown/Trivia-Game/blob/main/Trivia%20Wireframe.png?raw=true).
 
-## Technologies used:
+## Technologies Used
+
+The game is built using the following technologies:
 
 1. HTML
-2. Javascript
+2. JavaScript
 3. CSS
 4. Visual Studio Code Editor
 5. GitHub
 
 ## Getting Started
 
-You can play the game online by clicking [here]"Insert link after completion".
+You can play the game online by clicking [here](Insert link after completion).
 
-If you want to run it locally, follow these steps:
+If you want to run it locally for development or testing, follow these steps:
 
-1. Clone the repository
-2. Open the index.html file in your web browser.
+### Running the Game Locally
 
-## Game Instructions
+1. Clone the repository to your local machine using Git:
 
-Answer Trivia questions and test your knowledge.
-
-## More Steps
-
-- Add a timer for each question.
-- Implement high scores and leader-boards.
+   ```bash
+   git clone https://github.com/drewkybrown/Trivia-Game.git
+   ```

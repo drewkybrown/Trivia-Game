@@ -50,8 +50,8 @@ footer {
 #introduction p {
     font-size: 20px;
     line-height: 1.5;
-    color: rgb(244, 240, 236);
-    font-style: italic;
+    color: white;
+    font-style:inherit;
     font-weight: bold;
 }
 
@@ -133,7 +133,7 @@ footer #score {
     font-weight: bold;
     color: white;
     text-align: center;
-    text-color: white;
+    color: white;
 }
 
 footer p {
