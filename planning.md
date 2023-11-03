@@ -2,58 +2,56 @@
 
 ## Choice of Game
 
-My game of choice is a trivia game.
+My game of choice is a TRIVIA game.(History Quiz Challenge)
 
-## Pseudocode for the Game Play:
+## Pseudocode for the Game Play
 
-1. initialize variables:
+1. **Initialize variables:**
 
-- Set currentQuestion to 0
-- Set score to 0
+   - Set `currentQuestion` to 0
+   - Set `score` to 0
 
-2. Create an array called trviaData to store questions and answer options
+2. **Create an array called `triviaData` to store questions and answer options**
 
-3. Function displayQuestion():
-   If currentQuestion is less than the length of triviaData:
+3. **Function `displayQuestion`:**
 
-- Show question and answer options
-- Listen for answer
+   - If `currentQuestion` is less than the length of `triviaData`:
+     - Show the question and answer options.
+     - Listen for the answer.
+   - Else:
+     - Display the final score.
+     - End the game.
 
-Else:
+4. **Function `checkAnswer`:**
 
-- Display final score
-- End game
+   - Compare the selected answer with the correct answer.
+   - If the answer is correct, increase the score.
 
-4. Function checkAnswer():
+5. **Function `endGame`:**
 
-- Compare selected with correct answer.
-- If correct, increase score.
+   - Display the player's final score.
 
-5. Function endGame():
+6. **Start game / Call `displayQuestion`**
 
-- Display player final score
+7. **HTML & CSS:**
 
-6. Start game/ call displayQuestion
+   - Create interface elements.
+   - Style the interface elements.
 
-7. HTML & CSS :
+8. **User Interaction:**
 
-- Create interface elements
-- Style the interface elements
+   - Implement user interactions for answers and game progression.
 
-8. User Interaction:
+9. **Scoring:**
 
-- Implement user interactions for answers and progression
+   - Calculate and display the score.
 
-9. Scoring:
+10. **GitHub Repository and README:**
 
-- Calculate and display score.
+- Create a GitHub repository.
+- Prepare a README with game details and instructions.
 
-10. Github Repository and README:
-
-- Create a Github repository
-- Prepare a Readme with game details and instructions
-
-11. Testing and Deploying:
+11. **Testing and Deploying:**
 
 - Test the game for correctness.
 - Deploy the game online.

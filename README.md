@@ -20,6 +20,14 @@ The game is built using the following technologies:
 
 You can play the game online by clicking [here](https://drewkybrown.github.io/Trivia-Game/).
 
+Gameplay Instructions:
+
+1. Click on the "Start Game" button to begin the history quiz challenge.
+2. Answer the multiple-choice questions by clicking on the options.
+3. The game will provide instant feedback on whether your answer is correct or not.
+4. Continue to the next question until you complete the quiz.
+5. After answering all questions, your final score will be displayed.
+
 If you want to run it locally for development or testing, follow these steps:
 
 ### Running the Game Locally

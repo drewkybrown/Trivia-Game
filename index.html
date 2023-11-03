@@ -1,154 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Test your knowledge with the History Trivia Challenge.">
-    <meta name="author" content="Your Name">
-    <meta name="keywords" content="history, trivia, quiz, game">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Test your knowledge with the History Trivia Challenge."
+    />
+    <meta name="author" content="Your Name" />
+    <meta name="keywords" content="history, trivia, quiz, game" />
     <title>History Trivia Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="game-background">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="game-background">
     <header>
-        <h1 id="game-title">History Trivia Challenge</h1>
+      <h1 id="game-title">History Trivia Challenge</h1>
     </header>
 
     <main>
+      <div id="introduction">
+        <p>
+          Welcome, history buffs and trivia enthusiasts, to a journey through
+          the annals of time! Get ready to test your knowledge, as we embark on
+          a thrilling quest to uncover the fascinating stories, remarkable
+          individuals, and pivotal moments that have shaped our world. From
+          ancient civilizations to modern revolutions, this history challenge
+          trivia game will put your historical acumen to the test.
+        </p>
+      </div>
 
-        <div id="introduction">
-            <p>Welcome, history buffs and trivia enthusiasts, to a journey through the annals of time! Get ready to test your knowledge, as we embark on a thrilling quest to uncover the fascinating stories, remarkable individuals, and pivotal moments that have shaped our world. From ancient civilizations to modern revolutions, this history challenge trivia game will put your historical acumen to the test.</p>
+      <div class="question-container">
+        <p id="question-text">
+          Question 1: Who was the first President of the United States?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">George Washington</button></li>
+          <!-- Correct Answer: A -->
+          <li><button class="B">Donald Trump</button></li>
+          <li><button class="C">John Adams</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 2: In which year did Christopher Columbus first arrive in the
+          Americas?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">1492</button></li>
+          <!-- Correct Answer: A -->
+          <li><button class="B">1620</button></li>
+          <li><button class="C">1776</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 3: What ancient wonder was located in Alexandria, Egypt, and
+          was one of the Seven Wonders of the Ancient World?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">The Colossus of Rhodes</button></li>
+          <li><button class="B">The Great Wall of China</button></li>
+          <li><button class="C">The Lighthouse of Alexandria</button></li>
+          <!-- Correct Answer: C -->
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 4: Which battle, fought in 1066, resulted in William the
+          Conqueror becoming the King of England?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">The Battle of Hastings</button></li>
+          <!-- Correct Answer: A -->
+          <li><button class="B">The Battle of Agincourt</button></li>
+          <li><button class="C">The Battle of Bannockburn</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 5: Who was the Egyptian queen known for her relationship with
+          Roman leaders Julius Caesar and Mark Antony?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">Cleopatra</button></li>
+          <!-- Correct Answer: A -->
+          <li><button class="B">Nefertiti</button></li>
+          <li><button class="C">Hatshepsut</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 6: What infamous ship sank on its maiden voyage in 1912,
+          leading to one of the deadliest commercial peacetime maritime
+          disasters in modern history?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">The Millennium Falcon</button></li>
+          <li><button class="B">The Titanic II</button></li>
+          <!-- Correct Answer: B -->
+          <li><button class="C">SS Andrea Doria</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 7: The signing of the Magna Carta in 1215 is considered a
+          significant event in the history of which Country?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">France</button></li>
+          <li><button class="B">England</button></li>
+          <!-- Correct Answer: B -->
+          <li><button class="C">Spain</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 8: Who was the first woman to fly solo across the Atlantic
+          Ocean?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">Amelia Earhart</button></li>
+          <!-- Correct Answer: A -->
+          <li><button class="B">Bessie Coleman</button></li>
+          <li><button class="C">Harriet Quimby</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 9: During which war was the Battle of Gettysburg fought?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">World War 1</button></li>
+          <li><button class="B">American Civil War</button></li>
+          <!-- Correct Answer: B -->
+          <li><button class="C">Korean War</button></li>
+        </ul>
+      </div>
+
+      <div class="question-container">
+        <p id="question-text">
+          Question 10: What was the code name for the Allied invasion of
+          Normandy during World War II?
+        </p>
+        <ul id="answer-list">
+          <li><button class="A">Operation Market Garden</button></li>
+          <li><button class="B">Operation Barbarossa</button></li>
+          <li><button class="C">Operation Overlord</button></li>
+          <!-- Correct Answer: C -->
+        </ul>
+      </div>
+
+      <div id="feedback"></div>
+
+      <div id="button-container">
+        <button id="start-button">Start Game</button>
+        <button id="next-button" style="display: none">Next Question</button>
+      </div>
+
+      <!-- reset button -->
+      <div id="button-container">
+        <button id="reset-button" style="display: none">Reset Game</button>
+      </div>
+
+      <!-- Music controls -->
+      <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <div id="music-controls">
+        <button id="play-music">Play Music</button>
+        <button id="pause-music">Pause Music</button>
+        <div class="volume-container">
+          <label for="volume-control">Volume:</label>
+          <input
+            type="range"
+            id="volume-control"
+            min="0"
+            max="1"
+            step="0.1"
+            value="0.5"
+          />
         </div>
-
-        <div class="question-container">
-            <p id="question-text">Question 1: Who was the first President of the United States?</p>
-            <ul id="answer-list">
-                <li><button class="A">George Washington</button></li> <!-- Correct Answer: A -->
-                <li><button class="B">Donald Trump</button></li>
-                <li><button class="C">John Adams</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 2: In which year did Christopher Columbus first arrive in the Americas?</p>
-            <ul id="answer-list">
-                <li><button class="A">1492</button></li> <!-- Correct Answer: A -->
-                <li><button class="B">1620</button></li>
-                <li><button class="C">1776</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 3: What ancient wonder was located in Alexandria, Egypt, and was one of the Seven Wonders of the Ancient World?</p>
-            <ul id="answer-list">
-                <li><button class="A">The Colossus of Rhodes</button></li>
-                <li><button class="B">The Great Wall of China</button></li>
-                <li><button class="C">The Lighthouse of Alexandria</button></li><!-- Correct Answer: C -->
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 4: Which battle, fought in 1066, resulted in William the Conqueror becoming the King of England?</p>
-            <ul id="answer-list">
-                <li><button class="A">The Battle of Hastings</button></li> <!-- Correct Answer: A -->
-                <li><button class="B">The Battle of Agincourt</button></li>
-                <li><button class="C">The Battle of Bannockburn</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 5: Who was the Egyptian queen known for her relationship with Roman leaders Julius Caesar and Mark Antony?</p>
-            <ul id="answer-list">
-                <li><button class="A">Cleopatra</button></li><!-- Correct Answer: A -->
-                <li><button class="B">Nefertiti</button></li>
-                <li><button class="C">Hatshepsut</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 6: What infamous ship sank on its maiden voyage in 1912, leading to one of the deadliest commercial peacetime maritime disasters in modern history?</p>
-            <ul id="answer-list">
-                <li><button class="A">The Millennium Falcon</button></li>
-                <li><button class="B">The Titanic II</button></li><!-- Correct Answer: B -->
-                <li><button class="C">SS Andrea Doria</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 7: The signing of the Magna Carta in 1215 is considered a significant event in the history of which Country?</p>
-            <ul id="answer-list">
-                <li><button class="A">France</button></li>
-                <li><button class="B">England</button></li><!-- Correct Answer: B -->
-                <li><button class="C">Spain</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 8: Who was the first woman to fly solo across the Atlantic Ocean?</p>
-            <ul id="answer-list">
-                <li><button class="A">Amelia Earhart</button></li><!-- Correct Answer: A -->
-                <li><button class="B">Bessie Coleman</button></li>
-                <li><button class="C">Harriet Quimby</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 9: During which war was the Battle of Gettysburg fought?</p>
-            <ul id="answer-list">
-                <li><button class="A">World War 1</button></li>
-                <li><button class="B">American Civil War</button></li><!-- Correct Answer: B -->
-                <li><button class="C">Korean War</button></li>
-             </ul>
-         </div>
-
-         <div class="question-container">
-            <p id="question-text">Question 10: What was the code name for the Allied invasion of Normandy during World War II?</p>
-            <ul id="answer-list">
-                <li><button class="A">Operation Market Garden</button></li>
-                <li><button class="B">Operation Barbarossa</button></li>
-                <li><button class="C">Operation Overlord</button></li><!-- Correct Answer: C -->
-             </ul>
-         </div>
-
-
-
-        <div id="feedback"></div>
-
-
-        <div id="button-container">
-            <button id="start-button">Start Game</button>
-            <button id="next-button" style="display: none">Next Question</button>
-
-          </div>
-
-            <!-- reset button -->
-          <div id="button-container">
-            <button id="reset-button" style="display: none">Reset Game</button>
-            </div>
-
-                <!-- Music controls -->
-        <audio id="background-music" loop>
-            <source src="background-music.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-
-        <div id="music-controls">
-            <button id="play-music">Play Music</button>
-            <button id="pause-music">Pause Music</button>
-            <div class="volume-container">
-                <label for="volume-control">Volume:</label>
-                <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
-            </div>
-        </div>
-        
-          
-
+      </div>
     </main>
 
     <footer>
-        <p>Score: <span id="score">0</span></p>
+      <p>Score: <span id="score">0</span></p>
     </footer>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
